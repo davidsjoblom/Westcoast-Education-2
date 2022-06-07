@@ -3,18 +3,21 @@ import { NavLink } from 'react-router-dom';
 function Navbar() {
   return (
     <nav id='navbar'>
-      <h1 className='logo'>
-        <span className='text-primary'>
-          <i className='fas fa-car'></i> Westcoast
-        </span>
-        Education
-      </h1>
+      <NavLink to='/'>
+        <h1 className='logo'>
+          <span className='text-primary'>
+            <i className='fa-solid fa-graduation-cap'></i> Westcoast
+          </span>
+          Education
+        </h1>
+      </NavLink>
+
       <ul>
         <li>
-          <NavLink to='/'>Start sida</NavLink>
-          <NavLink to='/list'>Lager fordon</NavLink>
-          <NavLink to='/add'>Lägg till fordon</NavLink>
-          <NavLink to='/login'>Logga in</NavLink>
+          <NavLink to='/courses'>Kurser</NavLink>
+          <NavLink to='/subjects'>Kategorier</NavLink>
+          <NavLink to='/students'>Studenter</NavLink>
+          <NavLink to='/teachers'>Lärare</NavLink>
         </li>
       </ul>
     </nav>

@@ -31,3 +31,5 @@ function CourseItem({ course, handleDeleteCourse }) {
         </tr>
     );
 }
+
+export default CourseItem;

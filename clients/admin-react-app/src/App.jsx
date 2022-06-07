@@ -1,5 +1,25 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import Navbar from './components/navbar/Navbar'
+import Home from './components/home/Home';
+
+import CourseList from './components/courses/CourseList';
+import AddCourse from './components/courses/AddCourse';
+import EditCourse from './components/courses/EditCourse';
+
+import StudentList from './components/students/StudentList';
+import AddStudent from './components/students/AddStudent';
+import EditStudent from './components/students/EditStudent';
+
+import SubjectList from './components/subjects/SubjectList';
+import AddSubject from './components/subjects/AddSubject';
+import EditSubject from './components/subjects/EditSubject';
+
+import TeacherList from './components/teachers/TeacherList';
+import AddTeacher from './components/teachers/AddTeacher';
+import EditTeacher from './components/teachers/EditTeacher';
+
+
 import './styles.css';
 import './utilities.css';
 

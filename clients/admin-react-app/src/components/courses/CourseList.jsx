@@ -22,21 +22,31 @@ function CourseList() {
     }
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Kurstitel</th>
-                </tr>
-            </thead>
-            <tbody>
-                {courses.map((course) => (
-                    <CourseItem
-                        course={course}
-                        key={course.courseId}
-                    />
-                ))}
-            </tbody>
-        </table>
+        <>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Kursnummer</th>
+                        <th>Kurstitel</th>
+                        <th>Längd</th>
+                        <th>Kategori</th>
+                        <th>Lärare</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {courses.map((course) => (
+                        <CourseItem
+                            course={course}
+                        // key={course.courseId} rly needed?
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </>
+
     )
 }
 
