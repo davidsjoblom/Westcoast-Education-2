@@ -1,0 +1,8 @@
+Required functions:
+List and view courses by subject
+Register new student
+Register student to course
+
+Outline:
+Home page
+View courses by
