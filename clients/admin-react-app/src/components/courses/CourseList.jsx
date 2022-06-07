@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import CourseItem from './CourseItem';
 
 function CourseList() {
+    const navigate = useNavigate();
+
+    const onAddNewClickHandler = () => {
+        navigate('/courses/add');
+    }
+
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
@@ -21,8 +28,26 @@ function CourseList() {
         }
     }
 
+    const deleteVehicle = async (id) => {
+        const url = `${process.env.REACT_APP_BASEURL}/courses/${id}`;
+        const response = await fetch(url, {
+            method: 'DELETE',
+        });
+        if (response.status >= 200 && response.status <= 299) {
+            console.log('Kursen borttagen');
+            loadCourses();
+          } else {
+            console.log('Det gick fel någonstans');
+            console.log(response.status);
+            console.log(await response.text());
+          }
+    }
+
     return (
         <>
+            <div className="buttons" onClick={onAddNewClickHandler}>
+                <button type="submit" className='btn'>Lägg till ny kurs</button>
+            </div>
             
             <table>
                 <thead>
@@ -40,7 +65,8 @@ function CourseList() {
                     {courses.map((course) => (
                         <CourseItem
                             course={course}
-                        // key={course.courseId} rly needed?
+                            key={course.courseId}
+                            handleDeleteCourse={deleteVehicle}
                         />
                     ))}
                 </tbody>

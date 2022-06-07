@@ -37,7 +37,7 @@ function App() {
 
                     <Route path='/subjects' element={<SubjectList />} />
                     <Route path='/subjects/add' element={<AddSubject />} />
-                    <Route path='/subjects/edit(:id' element={<EditSubject />} />
+                    <Route path='/subjects/edit/:id' element={<EditSubject />} />
 
                     <Route path='/students' element={<StudentList />} />
                     <Route path='/students/add' element={<AddStudent />} />
