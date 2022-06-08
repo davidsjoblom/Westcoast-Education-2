@@ -20,24 +20,28 @@ function SubjectList() {
         } else {
             setSubjects(await response.json());
         }
-    } 
+    }
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Kategori</th>
-                </tr>
-            </thead>
-            <tbody>
-                {subjects.map((subject) => (
-                    <SubjectListItem 
-                        subject={subject}
-                        key={subject.subjectId}
-                    />
-                ))}
-            </tbody>
-        </table>
+        <>
+            <h1 className="page-titel">Välj en kategori</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {subjects.map((subject) => (
+                        <SubjectListItem
+                            subject={subject}
+                            key={subject.subjectId}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </>
     )
 }
 

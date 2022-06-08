@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import CourseList from './components/courses/CourseList';
 import SubjectList from './components/subjects/Subjectlist';
 import AddStudent from './components/students/AddStudent';
+import CoursesBySubject from './components/courses/CoursesBySubject';
 
 import './styles.css';
 import './utilities.css';
@@ -17,6 +18,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/courses' element={<CourseList />} />
+                    <Route path='/courses/:subjectName' element={<CoursesBySubject />} />
                     <Route path='/subjects' element={<SubjectList />} />
                     <Route path='/register' element={<AddStudent />} />
                 </Routes>

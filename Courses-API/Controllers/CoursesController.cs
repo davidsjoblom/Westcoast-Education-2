@@ -43,8 +43,8 @@ namespace Courses_API.Controllers
             return Ok(response);
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<CourseViewModel>>> GetCoursesBySubject([FromQuery] string subject)
+        [HttpGet("bysubject/{subject}")]
+        public async Task<ActionResult<List<CourseViewModel>>> GetCoursesBySubject(string subject)
         {
             try 
             {
