@@ -18,6 +18,7 @@ function CourseItem({ course, handleDeleteCourse }) {
                     <i className='fa-solid fa-pencil edit'></i>
                 </span>
             </td>
+            <td>{course.courseId}</td>
             <td>{course.courseNr}</td>
             <td>{course.title}</td>
             <td>{course.duration}</td>

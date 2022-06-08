@@ -28,7 +28,7 @@ function CourseList() {
         }
     }
 
-    const deleteVehicle = async (id) => {
+    const deleteCourse = async (id) => {
         const url = `${process.env.REACT_APP_BASEURL}/courses/${id}`;
         const response = await fetch(url, {
             method: 'DELETE',
@@ -45,14 +45,15 @@ function CourseList() {
 
     return (
         <>
-            <div className="buttons" onClick={onAddNewClickHandler}>
-                <button type="submit" className='btn'>Lägg till ny kurs</button>
+            <div className="buttons">
+                <button type="submit" className='btn' onClick={onAddNewClickHandler}>Lägg till ny kurs</button>
             </div>
             
             <table>
                 <thead>
                     <tr>
                         <th></th>
+                        <th>KursID</th>
                         <th>Kursnummer</th>
                         <th>Kurstitel</th>
                         <th>Längd</th>
@@ -66,7 +67,7 @@ function CourseList() {
                         <CourseItem
                             course={course}
                             key={course.courseId}
-                            handleDeleteCourse={deleteVehicle}
+                            handleDeleteCourse={deleteCourse}
                         />
                     ))}
                 </tbody>

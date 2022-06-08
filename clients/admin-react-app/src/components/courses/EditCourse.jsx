@@ -96,7 +96,7 @@ function EditCourse() {
 
     return (
         <>
-            <h1 className="page-title">Uppdatera en kurs</h1>
+            <h1 className="page-title">Uppdatera kurs</h1>
             <section className="form-container">
                 <h4>Kursinfo</h4>
                 <section className="form-wrapper">

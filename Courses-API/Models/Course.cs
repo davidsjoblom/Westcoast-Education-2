@@ -5,7 +5,7 @@ namespace Courses_API.Models
         public int Id { get; set; }
         public int CourseNr { get; set; }
         public string? Title { get; set; }
-        public int Duration { get; set; }
+        public string? Duration { get; set; }
         public string? Description { get; set; }
         public string? Details { get; set; }
         public int SubjectId { get; set; }
