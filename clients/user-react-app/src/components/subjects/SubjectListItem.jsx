@@ -12,7 +12,9 @@ function SubjectListItem ({subject}) {
             <td>{subject.name}</td>
             <td>
                 <span onClick={onClickHandler}>
-                    <i className='fa-solid fa-graduation-cap'></i>
+                    <div className="buttons">
+                        <button className="btn">Se kurser</button>
+                    </div>
                 </span>
             </td>
         </tr>

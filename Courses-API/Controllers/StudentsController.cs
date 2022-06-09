@@ -28,6 +28,21 @@ namespace Courses_API.Controllers
             return Ok(response);
         }
 
+        [HttpGet("byemail/{email}")]
+        public async Task<ActionResult<StudentViewModel>> GetStudentByEmail(string email) 
+        {
+            try
+            {
+                var response = await _repo.GetStudentByEmailAsync(email);
+                if (response is null) return NotFound($"Ingen student med email: {email} hittades");
+            return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<ActionResult> AddStudent(PostStudentViewModel model) 
         {

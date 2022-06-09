@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AddStudent() {
+    const navigate = useNavigate();
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -49,6 +52,7 @@ function AddStudent() {
 
         if (response.status >= 200 && response.status <= 299) {
             console.log('Studenten är sparad');
+            navigate('/');
         } else {
             console.log('Nått gick fel');
             console.log(`Status code: ${response.status}`);
@@ -58,7 +62,7 @@ function AddStudent() {
 
     return (
         <>
-            <h1 className="page-title">Registrera ny student</h1>
+            <h1 className="page-title">Registrera dig</h1>
             <section className="form-container">
                 <h4>Student info</h4>
                 <section className="form-wrapper">

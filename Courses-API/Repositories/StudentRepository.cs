@@ -46,7 +46,7 @@ namespace Courses_API.Repositories
         public async Task<StudentViewModel?> GetStudentByEmailAsync(string email)
         {
             return await _context.Students
-                .Where(s => s.Email!.ToLower() == email)
+                .Where(s => s.Email!.ToLower() == email.ToLower())
                 .ProjectTo<StudentViewModel>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }
